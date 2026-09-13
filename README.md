@@ -8,7 +8,7 @@ Monorepo com material prático de três cursos da Udemy. Cada pasta é independe
 |-------|------|-----------|
 | [`fundamentals/`](fundamentals/) | Docker + Kubernetes (intro) | Progressão do container simples até deploy completo com kind |
 | [`docker/`](docker/) | Docker (aprofundado) | Chroot, builds, Compose, Swarm, segurança e documentação |
-| [`kubernetes/`](kubernetes/) | Kubernetes (aprofundado) | Provisioning (kind/kubeadm), YAML e workloads _(em construção)_ |
+| [`kubernetes/`](kubernetes/) | Kubernetes (aprofundado) | Provisioning (kind/kubeadm), workloads, Services, deploy strategies e Ingress |
 
 ## Ordem sugerida
 

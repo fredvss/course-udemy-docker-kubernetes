@@ -1,9 +1,11 @@
-# Postgres com Volumes (Docker Compose)
+# 03 — PostgreSQL com Volumes
 
 Este diretório possui dois cenários de persistência para Postgres:
 
 1. **Volume absoluto (bind em pasta local)**
 2. **Volume nomeado com bind (`driver_opts`)**
+
+> Parte do curso [Fundamentos](../README.md).
 
 ## Pré-requisitos
 
@@ -54,3 +56,7 @@ Parar ambiente e remover volume Docker + pasta do bind (`./postgres_volume`):
 - No cenário bind, o `docker compose up` cria um volume `postgres_volume_03`, evitando conflito com outros diretórios.
 - Os scripts de stop removem os dados persistidos para facilitar testes do zero.
 - Se quiser manter os dados, remova as linhas de `rm -rf` dos scripts de stop.
+
+## Próximo passo
+
+[04-application-db](../04-application-db/) — API integrada ao banco com Docker Compose.

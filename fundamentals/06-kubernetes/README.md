@@ -1,6 +1,8 @@
-# Joke API no Kubernetes (kind)
+# 06 — Joke API no Kubernetes (kind)
 
 Implantação completa da Joke API com PostgreSQL em um cluster Kubernetes local usando [kind](https://kind.sigs.k8s.io/). Inclui Deployments, Services, PersistentVolume, PersistentVolumeClaim, Namespace e CronJob.
+
+> Parte do curso [Fundamentos](../README.md).
 
 ## Arquitetura
 
@@ -58,23 +60,21 @@ flowchart LR
 │       ├── kubernetes-services-overview.png
 │       ├── kubernetes-manifests-overview.png
 │       └── project-architecture-overview.png
-├── cluster/
-│   ├── config.yaml               # Configuração do cluster kind (1 control-plane + 2 workers)
-│   └── create_namespace.yaml     # Namespace jokeapi
-├── api/
-│   ├── api_deployment.yaml       # Deployment da Joke API
-│   ├── api_service.yaml          # Service NodePort para a API
+├── cluster/                      # → README.md
+│   ├── config.yaml
+│   └── create_namespace.yaml
+├── api/                          # → README.md
+│   ├── api_deployment.yaml
+│   ├── api_service.yaml
 │   ├── Dockerfile
-│   ├── requirements.txt
 │   └── src/main.py
-├── postgres/
-│   ├── database_deployment.yaml  # Deployment do PostgreSQL
-│   ├── database_pv_pvc.yaml      # PersistentVolume + PersistentVolumeClaim
-│   └── database_service.yaml     # Service ClusterIP para o banco
-├── job/
-│   ├── job_request_new_joke.yaml # CronJob (disparo a cada minuto)
+├── postgres/                     # → README.md
+│   ├── database_deployment.yaml
+│   ├── database_pv_pvc.yaml
+│   └── database_service.yaml
+├── job/                          # → README.md
+│   ├── job_request_new_joke.yaml
 │   ├── Dockerfile
-│   ├── requirements.txt
 │   └── src/main.py
 ├── hostdir/                      # Montado nos workers via kind extraMounts (gitignored)
 ├── build-images.sh               # Build das imagens locais e carga no cluster kind

@@ -1,6 +1,8 @@
-# Kubernetes com kubeadm + Vagrant + VirtualBox
+# kubeadm — Cluster com Vagrant + VirtualBox
 
 Este laboratório cria automaticamente:
+
+> Parte do módulo [01-provisioning](../) do curso [Kubernetes](../../README.md).
 
 - `master-1` — `192.168.56.101`
 - `worker-1` — `192.168.56.201`

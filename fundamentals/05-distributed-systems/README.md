@@ -1,6 +1,8 @@
-# Sistemas Distribuídos - Rastreamento de Eventos Minecraft
+# 05 — Sistema Distribuído (Minecraft Event Tracking)
 
 Sistema distribuído que simula o rastreamento em tempo real de sessões de jogadores de Minecraft. Combina um cluster ScyllaDB para escritas de alta performance, um serviço Python que gera e insere eventos sintéticos continuamente, e um dashboard Streamlit para visualização ao vivo.
+
+> Parte do curso [Fundamentos](../README.md).
 
 ---
 
@@ -143,3 +145,7 @@ http://localhost:8501
 ## Rede
 
 Os serviços da aplicação se conectam ao cluster ScyllaDB através de uma rede Docker externa chamada `scylla_cluster_scylla-net`, criada automaticamente pelo projeto compose do `scylla_cluster`. Por isso o cluster precisa estar em execução antes de subir os serviços da aplicação.
+
+## Próximo passo
+
+[06-kubernetes](../06-kubernetes/) — deploy completo no Kubernetes com kind.

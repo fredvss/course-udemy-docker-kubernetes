@@ -1,6 +1,8 @@
-# PostgreSQL com Variáveis de Ambiente (Docker Compose)
+# 02 — PostgreSQL com Variáveis de Ambiente
 
 Projeto demonstrando as duas formas de passar variáveis de ambiente para um container PostgreSQL com Docker Compose: hardcoded diretamente no arquivo e via arquivo `.env`.
+
+> Parte do curso [Fundamentos](../README.md).
 
 ## Stack
 
@@ -91,3 +93,7 @@ docker compose -f docker-compose-postgres-com-env.yaml down
 
 - Usar um arquivo `.env` é a abordagem recomendada: evita expor credenciais no código e facilita trocar configurações por ambiente (dev, staging, prod).
 - Nunca commite o arquivo `.env` com credenciais reais em repositórios públicos.
+
+## Próximo passo
+
+[03-postgres-volumes](../03-postgres-volumes/) — persistência com volumes Docker.

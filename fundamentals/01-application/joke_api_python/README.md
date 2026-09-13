@@ -2,6 +2,8 @@
 
 API simples de piadas com FastAPI, pronta para subir com Docker Compose na porta 8000.
 
+> Subprojeto de [01-application](../) — veja o README do módulo para contexto completo.
+
 ## Requisitos
 
 - Docker

@@ -1,6 +1,8 @@
-# Joke API com FastAPI (Docker Compose)
+# 01 — Joke API com FastAPI
 
 Projeto inicial da série, demonstrando como containerizar uma API Python simples com FastAPI usando Docker e Docker Compose.
+
+> Parte do curso [Fundamentos](../README.md).
 
 ## Stack
 
@@ -67,3 +69,7 @@ docker compose down
 
 - A flag `restart: unless-stopped` garante que o container suba automaticamente se o Docker reiniciar.
 - O volume `./joke_api_python/src:/app` permite editar o código sem precisar rebuildar a imagem.
+
+## Próximo passo
+
+[02-postgres-env](../02-postgres-env/) — variáveis de ambiente com PostgreSQL.

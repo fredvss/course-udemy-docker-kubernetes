@@ -1,6 +1,8 @@
-# Joke API com FastAPI e PostgreSQL
+# 04 — Joke API com Banco de Dados
 
-Projeto de exemplo com uma API em FastAPI que busca uma piada aleatoria no PostgreSQL usando Docker Compose.
+Projeto de exemplo com uma API em FastAPI que busca uma piada aleatória no PostgreSQL usando Docker Compose.
+
+> Parte do curso [Fundamentos](../README.md).
 
 ## Stack
 
@@ -188,3 +190,7 @@ Se o banco ja tinha dados persistidos, o script de inicializacao do PostgreSQL n
 ### API subiu, mas o endpoint ainda falhou na primeira tentativa
 
 O `run.sh` faz retry automatico do `curl` durante a validacao inicial. Isso cobre o pequeno intervalo em que a API terminou de subir, mas ainda nao estava pronta para responder a primeira conexao.
+
+## Próximo passo
+
+[05-distributed-systems](../05-distributed-systems/) — sistema distribuído multi-serviço.
