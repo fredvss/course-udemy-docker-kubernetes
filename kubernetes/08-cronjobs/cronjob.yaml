@@ -1,0 +1,16 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: my-cronjob
+spec:
+  schedule: "*/1 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: my-cronjob
+            image: alpine
+            command: ["echo", "Hello from the Kubernetes cluster using CronJob"]
+          restartPolicy: OnFailure
+  ttlSecondsAfterFinished: 5 #Time to remove the job after it has finished.

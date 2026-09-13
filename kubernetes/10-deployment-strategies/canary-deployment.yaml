@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: nginx-v1
+  name: nginx-v1
+  namespace: default
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx-canary
+  template:
+    metadata:
+      labels:
+        app: nginx-canary
+    spec:
+      containers:
+      - image: nginx
+        name: nginx-v1
+        imagePullPolicy: Always
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: nginx-v2
+  name: nginx-v2
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx-canary
+  template:
+    metadata:
+      labels:
+        app: nginx-canary
+    spec:
+      containers:
+      - image: httpd
+        name: nginx-v2
+        imagePullPolicy: Always

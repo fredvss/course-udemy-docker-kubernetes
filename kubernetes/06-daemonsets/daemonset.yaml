@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  labels:
+    app: nginx
+  name: nginx-daemonset
+spec:
+  selector:
+    matchLabels:
+      app: nginx-daemonset
+  template:
+    metadata:
+      labels:
+        app: nginx-daemonset
+    spec:
+      containers:
+      - image: nginx:latest
+        name: nginx-daemonset
+      nodeSelector: #posso adicionar em hosts com labels específicas
+        kubernetes.io/os: linux
+        kubernetes.io/hostname: worker-2

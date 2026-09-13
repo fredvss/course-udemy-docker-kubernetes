@@ -1,0 +1,17 @@
+apiVersion: metallb.io/v1beta1
+kind: IPAddressPool
+metadata:
+  name: private-subnet-pool
+  namespace: metallb-system
+spec:
+  addresses:
+  - 192.168.56.240-192.168.56.250 # "ip r" command to get vbox route (192.168.56.0/24 dev vboxnet0 proto kernel scope link src 192.168.56.1)
+---
+apiVersion: metallb.io/v1beta1
+kind: L2Advertisement
+metadata:
+  name: private-subnet-advertisement
+  namespace: metallb-system
+spec:
+  ipAddressPools:
+  - private-subnet-pool

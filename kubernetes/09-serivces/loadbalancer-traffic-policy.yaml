@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    name: nginx-service
+  name: nginx-service
+  namespace: default
+spec:
+  ports:
+  - name: http
+    port: 8080
+    targetPort: 80
+  selector:
+    app: nginx
+  type: LoadBalancer
+  internalTrafficPolicy: Local
+  externalTrafficPolicy: Local
+
+# With traffic policy set to Local, the load balancer will only send traffic to nodes that have pods for the service.
+# This can be useful for reducing latency, and services that require session affinity or for services that need to maintain state across requests.
+# However, it can also lead to uneven distribution of traffic if some nodes have more pods than others.

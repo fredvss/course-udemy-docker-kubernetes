@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  labels:
+    app: nginx-statefulset
+  name: nginx-statefulset
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx-statefulset
+  template:
+    metadata:
+      labels:
+        app: nginx-statefulset
+    spec:
+      containers:
+      - image: nginx
+        name: nginx-statefulset
+        volumeMounts:
+        - name: nginx-statefulset-pvc
+          mountPath: /usr/share/nginx/html
+  volumeClaimTemplates:
+  - metadata:
+      name: nginx-statefulset-pvc
+    spec:
+      accessModes: [ "ReadWriteOnce" ]
+      resources:
+        requests:
+          storage: 1Gi

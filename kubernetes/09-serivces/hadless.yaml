@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    name: nginx-service-headless
+  name: nginx-service-headless
+  namespace: default
+spec:
+  selector:
+    app: nginx-statefulset
+  ports:
+  - name: http
+    port: 8080
+    targetPort: 80
+  type: ClusterIP
+  clusterIP: None
+
+# Once my pods and service are up and running, I can use the following command to get the DNS name of my pods:
+# kubectl run alpine-test -it --rm --image=alpine -- sh
+# apk add bind-tools
+# host nginx-statefulset-0.nginx-service-headless
+# nginx-statefulset-0.nginx-service-headless.default.svc.cluster.local has address 10.244.1.32
+
