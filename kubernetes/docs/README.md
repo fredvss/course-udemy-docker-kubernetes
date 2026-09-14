@@ -22,6 +22,7 @@ Assets em [`assets/`](assets/):
 | `12-traffic-policy.png` | External traffic policy |
 | `13-deploy-strategies.png` | Blue-green e canary |
 | `14-ingress.png` | Ingress |
+| `15-classes.png` | Classes |
 
 ## Documentação nos módulos
 

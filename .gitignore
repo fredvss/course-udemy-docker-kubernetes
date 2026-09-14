@@ -22,3 +22,7 @@ fundamentals/06-kubernetes/hostdir/postgresql/
 # Arquivos de sistema
 .DS_Store
 Thumbs.db
+
+# TLS Certificates
+*.crt
+*.key
